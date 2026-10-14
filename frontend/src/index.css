@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-gov-textMain antialiased selection:bg-amber-100 selection:text-gov-navy font-sans;
+    min-height: 100vh;
+  }
+}
+
+/* Glass shine animation effect */
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(30deg);
+  transition: all 0.75s ease-in-out;
+  pointer-events: none;
+}
+
+.glass-shine:hover::after {
+  left: 140%;
+}
+
+/* Government Tricolor Top Ribbon */
+.tricolor-bar {
+  background: linear-gradient(
+    90deg,
+    #FF9933 0%,
+    #FF9933 33.3%,
+    #FFFFFF 33.3%,
+    #FFFFFF 66.6%,
+    #138808 66.6%,
+    #138808 100%
+  );
+  height: 4px;
+}
+
+/* Pulse animation for voice recording */
+@keyframes mic-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.mic-recording {
+  animation: mic-pulse 1.5s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

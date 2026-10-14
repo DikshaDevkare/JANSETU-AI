@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+backend/venv/
+venv/
+
+# Build outputs
+frontend/dist/
+dist/
+build/
+
+# Python cache & testing
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases
+backend/*.db
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated zip files (exclude from git tracking)
+JanSetu_AI_FullStack.zip
